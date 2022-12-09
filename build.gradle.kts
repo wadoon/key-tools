@@ -3,12 +3,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.sonarqube.gradle.SonarQubeExtension
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.5.31" apply (false)
-    id("org.jetbrains.dokka") version "1.6.10" apply (false)
+    kotlin("jvm") version "1.7.21"
     `maven-publish`
     `java-library`
+    id("org.jetbrains.dokka") version "1.7.10" apply (false)
     id("com.diffplug.spotless") version "6.4.2" apply false
-
     id("org.sonarqube") version "3.3"
 }
 
@@ -57,11 +56,11 @@ subprojects {
         //    implementation("org.key_project:key.core")
 
         val testImplementation by configurations
-        testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
-        testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
-        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
+        testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+        testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.0")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
         testImplementation("com.google.truth:truth:1.1.3")
-        testImplementation("org.slf4j:slf4j-simple:1.7.33")
+        testImplementation("org.slf4j:slf4j-simple:2.0.5")
     }
 
     tasks.withType<KotlinCompile> {
@@ -156,4 +155,15 @@ subprojects {
             }
         }
     }
+}
+dependencies {
+    implementation(kotlin("stdlib-jdk8"))
+}
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    jvmTarget = "1.8"
+}
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+    jvmTarget = "1.8"
 }

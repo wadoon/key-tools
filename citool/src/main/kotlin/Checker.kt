@@ -29,6 +29,18 @@ import com.github.ajalt.clikt.parameters.types.enum
 import com.github.ajalt.clikt.parameters.types.file
 import com.github.ajalt.clikt.parameters.types.int
 import com.google.gson.GsonBuilder
+import de.uka.ilkd.key.ConsoleLog.printm
+import de.uka.ilkd.key.ConsoleLog.info
+import de.uka.ilkd.key.ConsoleLog.error
+import de.uka.ilkd.key.ConsoleLog.RED
+import de.uka.ilkd.key.ConsoleLog.BLUE
+import de.uka.ilkd.key.ConsoleLog.GREEN
+import de.uka.ilkd.key.ConsoleLog.colorfg
+import de.uka.ilkd.key.ConsoleLog.debug
+import de.uka.ilkd.key.ConsoleLog.fail
+import de.uka.ilkd.key.ConsoleLog.fine
+import de.uka.ilkd.key.ConsoleLog.printBlock
+import de.uka.ilkd.key.ConsoleLog.warn
 import de.uka.ilkd.key.api.KeYApi
 import de.uka.ilkd.key.api.ProofManagementApi
 import de.uka.ilkd.key.control.AbstractProofControl
@@ -59,17 +71,6 @@ import kotlin.collections.HashSet
 import kotlin.system.exitProcess
 import kotlin.system.measureTimeMillis
 
-const val ESC = 27.toChar()
-const val RED = 31
-const val GREEN = 32
-const val YELLOW = 33
-const val BLUE = 34
-const val MAGENTA = 35
-const val CYAN = 36
-const val WHITE = 37
-
-fun colorfg(s: Any, c: Int) = "$ESC[${c}m$s$ESC[0m"
-fun colorbg(s: Any, c: Int) = "$ESC[${c + 10}m$s$ESC[0m"
 
 /**
  * A small interface for a checker scripts
@@ -78,8 +79,6 @@ fun colorbg(s: Any, c: Int) = "$ESC[${c + 10}m$s$ESC[0m"
  */
 class Checker : CliktCommand() {
     private val statistics = TreeMap<String, Any>()
-
-    enum class ColorMode { YES, NO, AUTO }
 
     var useColor: Boolean = false
     val color by option("--color").enum<ColorMode>().default(ColorMode.AUTO)
@@ -232,35 +231,6 @@ class Checker : CliktCommand() {
 
         exitProcess(errors)
     }
-
-    var currentPrintLevel = 0
-    fun printBlock(message: String, f: () -> Unit) {
-        info(message)
-        currentPrintLevel++
-        f()
-        currentPrintLevel--
-    }
-
-    fun printm(message: String, fg: Int? = null, bg: Int? = null) {
-        print("  ".repeat(currentPrintLevel))
-        val m =
-            when {
-                useColor -> message
-                fg != null && bg != null -> colorbg(colorfg(message, fg), bg)
-                fg != null -> colorfg(message, fg)
-                bg != null -> colorbg(message, bg)
-                else -> message
-            }
-        println(m)
-    }
-
-    fun error(message: String) = printm("[ERR ] $message", fg = RED)
-    fun fail(message: String) = printm("[FAIL] $message", fg = WHITE, bg = RED)
-    fun warn(message: String) = printm("[WARN] $message", fg = YELLOW)
-    fun info(message: String) = printm("[FINE] $message", fg = BLUE)
-    fun fine(message: String) = printm("[OK  ] $message", fg = GREEN)
-    fun debug(message: String) =
-        if (verbose) printm("[    ] $message", fg = GREEN) else Unit
 
     fun run(inputFile: String) {
         printBlock("Start with `$inputFile`") {
@@ -612,3 +582,53 @@ class GatherStatistics(val stats: Stats) : SkipMacro() {
     }
 }
 //endregion
+
+enum class ColorMode { YES, NO, AUTO }
+
+object ConsoleLog {
+    const val ESC = 27.toChar()
+    const val RED = 31
+    const val GREEN = 32
+    const val YELLOW = 33
+    const val BLUE = 34
+    const val MAGENTA = 35
+    const val CYAN = 36
+    const val WHITE = 37
+
+    var useColor = true
+    var verbose = true
+
+    fun colorfg(s: Any, c: Int) = "$ESC[${c}m$s$ESC[0m"
+    fun colorbg(s: Any, c: Int) = "$ESC[${c + 10}m$s$ESC[0m"
+
+    fun error(message: String) = printm("[ERR ] $message", fg = RED)
+    fun fail(message: String) = printm("[FAIL] $message", fg = WHITE, bg = RED)
+    fun warn(message: String) = printm("[WARN] $message", fg = YELLOW)
+    fun info(message: String) = printm("[FINE] $message", fg = BLUE)
+    fun fine(message: String) = printm("[OK  ] $message", fg = GREEN)
+    fun debug(message: String) =
+        if (verbose) printm("[    ] $message", fg = GREEN) else Unit
+
+    fun printm(message: String, fg: Int? = null, bg: Int? = null) {
+        print("  ".repeat(currentPrintLevel))
+        val m =
+            when {
+                useColor -> message
+                fg != null && bg != null -> colorbg(colorfg(message, fg), bg)
+                fg != null -> colorfg(message, fg)
+                bg != null -> colorbg(message, bg)
+                else -> message
+            }
+        println(m)
+    }
+
+
+    var currentPrintLevel = 0
+    fun printBlock(message: String, f: () -> Unit) {
+        info(message)
+        currentPrintLevel++
+        f()
+        currentPrintLevel--
+    }
+
+}

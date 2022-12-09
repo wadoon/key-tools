@@ -4,5 +4,6 @@ include('tadoc')
 include('miniweb')
 include('interactionlog')
 include('ide')
+include("specstat")
 // include('cfgautomacro')
 

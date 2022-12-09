@@ -3,17 +3,15 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("application")
+    id("antlr")
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 group = "com.github.wadoon.keytools"
-version = "1.4.0"
+version = "0.1.0"
 
 
 dependencies {
-    implementation("org.key_project:key.core:2.10.0")
-    implementation("org.key_project:key.util:2.10.0")
-
     val plugin by configurations
     plugin("org.slf4j:slf4j-simple:2.0.5")
     plugin("com.google.code.gson:gson:2.10")
@@ -32,14 +30,13 @@ tasks.register<ShadowJar>("miniShadowJar") {
     configurations = listOf(plugin)
     manifest {
         this.attributes(
-            "Main-Class" to "de.uka.ilkd.key.CheckerKt"
+            "Main-Class" to "com.github.wadoon.keytools.SpecStat"
         )
     }
 }
 
 application {
-    mainClassName = "de.uka.ilkd.key.CheckerKt"
+    mainClass.set("com.github.wadoon.keytools.SpecStat")
 }
-
 
 run {}
