@@ -1,22 +1,22 @@
-import com.diffplug.gradle.spotless.SpotlessExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.sonarqube.gradle.SonarQubeExtension
+import org.sonarqube.gradle.SonarQubePlugin
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.9.0" apply (false)
-    id("org.jetbrains.dokka") version "1.6.10" apply (false)
+    id("org.jetbrains.dokka") version "1.8.20" apply (false)
     `maven-publish`
     `java-library`
-    id("com.diffplug.spotless") version "6.4.2" apply false
+    id("com.diffplug.spotless") version "6.20.0" apply false
+    id("org.sonarqube") version "4.3.0.3225"
 
-    id("org.sonarqube") version "3.3"
+    id("com.github.ben-manes.versions") version "0.47.0"
 }
 
 repositories {
     mavenCentral()
 }
 
-configure<SonarQubeExtension> {
+sonar {
     properties {
         property("sonar.projectKey", "wadoon_key-tools")
         property("sonar.organization", "wadoon")
@@ -41,7 +41,6 @@ subprojects {
     repositories {
         mavenCentral()
         maven { url = uri("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven") }
-        maven { url = uri("https://s01.oss.sonatype.org/content/repositories/orgkey-project-1015") }
     }
 
     dependencies {
@@ -51,17 +50,17 @@ subprojects {
         plugin(platform("org.jetbrains.kotlin:kotlin-bom"))
         plugin("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         plugin("com.github.ajalt:clikt:2.8.0")
-        plugin("org.jetbrains:annotations:23.0.0")
-        plugin("org.slf4j:slf4j-api:1.7.33")
+        plugin("org.jetbrains:annotations:24.0.1")
+        plugin("org.slf4j:slf4j-api:2.0.7")
 
         //    implementation("org.key-project:key.core")
 
         val testImplementation by configurations
-        testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
-        testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
-        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
-        testImplementation("com.google.truth:truth:1.1.3")
-        testImplementation("org.slf4j:slf4j-simple:1.7.33")
+        testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
+        testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.0")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
+        testImplementation("com.google.truth:truth:1.1.5")
+        testImplementation("org.slf4j:slf4j-simple:2.0.7")
     }
 
     tasks.withType<KotlinCompile> {

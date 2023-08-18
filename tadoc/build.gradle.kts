@@ -1,6 +1,6 @@
 plugins {
     application
-    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 application {
@@ -11,7 +11,7 @@ dependencies {
     implementation("org.key-project:key.core:2.12.0")
     implementation("org.key-project:key.util:2.12.0")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.9.1")
     implementation("com.atlassian.commonmark:commonmark:0.17.0")
     implementation("com.atlassian.commonmark:commonmark-ext-gfm-tables:0.17.0")
     implementation("com.atlassian.commonmark:commonmark-ext-autolink:0.17.0")

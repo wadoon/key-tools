@@ -1,5 +1,5 @@
 plugins {
-    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "com.github.wadoon.keytools"
@@ -16,16 +16,16 @@ dependencies {
     implementation("org.key-project:key.core:2.12.0")
     implementation("org.key-project:key.util:2.12.0")
     implementation("org.key-project:key.ui:2.12.0")
-    implementation("org.slf4j:slf4j-api:1.7.33")
+    implementation("org.slf4j:slf4j-api:2.0.7")
 
-    testImplementation("org.slf4j:slf4j-simple:1.7.33")
+    testImplementation("org.slf4j:slf4j-simple:2.0.7")
 
     val plugin by configurations
     plugin("com.atlassian.commonmark:commonmark:0.17.0")
     plugin("com.atlassian.commonmark:commonmark-ext-gfm-tables:0.17.0")
     plugin("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    plugin("com.fasterxml.jackson.core:jackson-databind:2.13.1")
-    plugin("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.1")
-    plugin("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.1")
-    plugin("org.ocpsoft.prettytime:prettytime:5.0.2.Final")
+    plugin("com.fasterxml.jackson.core:jackson-databind:2.15.2")
+    plugin("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2")
+    plugin("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.2")
+    plugin("org.ocpsoft.prettytime:prettytime:5.0.7.Final")
 }

@@ -1,32 +1,32 @@
 plugins {
     application
     antlr
-    id("com.github.johnrengelman.shadow") version "7.1.2"
-    id("org.openjfx.javafxplugin") version "0.0.10"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("org.openjfx.javafxplugin") version "0.0.14"
 }
 
 
 dependencies {
     implementation("org.key-project:key.core:2.12.0")
     implementation("org.key-project:key.util:2.12.0")
-    implementation("com.miglayout:miglayout-javafx:11.0")
-    implementation("org.fxmisc.richtext:richtextfx:0.10.9")
+    implementation("com.miglayout:miglayout-javafx:11.1")
+    implementation("org.fxmisc.richtext:richtextfx:0.11.1")
     implementation("org.kordamp.ikonli:ikonli-antdesignicons-pack:12.3.1")
     implementation("org.kordamp.ikonli:ikonli-fontawesome5-pack:12.3.1")
     implementation("org.kordamp.ikonli:ikonli-javafx:12.3.1")
-    compileOnly("org.projectlombok:lombok:1.18.22")
+    compileOnly("org.projectlombok:lombok:1.18.28")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.slf4j:slf4j-simple:1.7.36")
+    implementation("org.slf4j:slf4j-simple:2.0.7")
     implementation("no.tornado:tornadofx:1.7.20")
-    implementation("org.antlr:antlr4-runtime:4.9.3")
-    antlr("org.antlr:antlr4:4.9.3")
+    implementation("org.antlr:antlr4-runtime:4.13.0")
+    antlr("org.antlr:antlr4:4.13.0")
 
-    testImplementation("com.google.truth:truth:1.1.3")
+    testImplementation("com.google.truth:truth:1.1.5")
 }
 
 
 javafx {
-    version = "17"
+    version = "20"
     modules = listOf("javafx.web", "javafx.controls", "javafx.fxml", "javafx.swing")
 }
 

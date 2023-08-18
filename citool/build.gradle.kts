@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("application")
-    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "com.github.wadoon.keytools"
@@ -15,8 +15,8 @@ dependencies {
     implementation("org.key-project:key.util:2.12.0")
 
     val plugin by configurations
-    plugin("org.slf4j:slf4j-simple:1.7.36")
-    plugin("com.google.code.gson:gson:2.9.0")
+    plugin("org.slf4j:slf4j-simple:2.0.7")
+    plugin("com.google.code.gson:gson:2.10.1")
 }
 
 val plugin by configurations
