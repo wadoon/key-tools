@@ -11,8 +11,8 @@ version = "1.4.0"
 
 
 dependencies {
-    implementation("org.key_project:key.core:2.10.0")
-    implementation("org.key_project:key.util:2.10.0")
+    implementation("org.key-project:key.core:2.12.0")
+    implementation("org.key-project:key.util:2.12.0")
 
     val plugin by configurations
     plugin("org.slf4j:slf4j-simple:1.7.36")
@@ -25,8 +25,8 @@ tasks.register<ShadowJar>("miniShadowJar") {
     group = "shadow"
     archiveClassifier.set("mini")
     /*dependencies {
-        exclude(dependency("org.key_project:key.core"))
-        exclude(dependency("org.key_project:key.util"))
+        exclude(dependency("org.key-project:key.core"))
+        exclude(dependency("org.key-project:key.util"))
     }*/
     from(sourceSets.getByName("main").output)
     configurations = listOf(plugin)
@@ -38,7 +38,7 @@ tasks.register<ShadowJar>("miniShadowJar") {
 }
 
 application {
-    mainClassName = "de.uka.ilkd.key.CheckerKt"
+    mainClass = "de.uka.ilkd.key.CheckerKt"
 }
 
 

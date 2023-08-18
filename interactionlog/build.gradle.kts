@@ -13,9 +13,9 @@ tasks.getByName<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("sha
 
 
 dependencies {
-    implementation("org.key_project:key.core:2.11.0-SNAPSHOT")
-    implementation("org.key_project:key.util:2.11.0-SNAPSHOT")
-    implementation("org.key_project:key.ui:2.11.0-SNAPSHOT")
+    implementation("org.key-project:key.core:2.12.0")
+    implementation("org.key-project:key.util:2.12.0")
+    implementation("org.key-project:key.ui:2.12.0")
     implementation("org.slf4j:slf4j-api:1.7.33")
 
     testImplementation("org.slf4j:slf4j-simple:1.7.33")

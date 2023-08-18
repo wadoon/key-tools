@@ -353,8 +353,10 @@ class InteractionLogView(val interactionLog: InteractionLog, private var mediato
             try {
                 val current = listInteraction.selectedValue as? NodeInteraction
                 if (current != null) {
-                    val node = current.getNode(mediator.selectedProof)
-                    mediator.selectionModel.selectedNode = node
+                    mediator.selectedProof?.let {
+                        val node = current.getNode(it)
+                        mediator.selectionModel.selectedNode = node
+                    }
                 }
             } catch (ex: ClassCastException) {
                 //ignore

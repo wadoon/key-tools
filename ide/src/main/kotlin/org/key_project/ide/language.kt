@@ -99,7 +99,8 @@ object KeyLanguage : Language() {
 
         literals = setOf(
             KeYLexer.BIN_LITERAL, KeYLexer.HEX_LITERAL, KeYLexer.CHAR_LITERAL,
-            KeYLexer.NUM_LITERAL, KeYLexer.QUOTED_STRING_LITERAL, KeYLexer.STRING_LITERAL
+            KeYLexer.FLOAT_LITERAL, KeYLexer.INT_LITERAL, KeYLexer.DOUBLE_LITERAL,
+            KeYLexer.REAL_LITERAL, KeYLexer.QUOTED_STRING_LITERAL, KeYLexer.STRING_LITERAL
         )
 
         control = setOf()

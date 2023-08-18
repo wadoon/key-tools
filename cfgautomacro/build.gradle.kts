@@ -11,8 +11,8 @@ version = "0.1"
 val plugin by configurations
 
 dependencies {
-    implementation("org.key_project:key.core:2.10.0")
-    implementation("org.key_project:key.util:2.10.0")
+    implementation("org.key-project:key.core:2.12.0")
+    implementation("org.key-project:key.util:2.12.0")
 }
 
 tasks.register<ShadowJar>("miniShadowJar") {

@@ -69,7 +69,7 @@ class PrettyPrinterDoc(
         val text = if (s != null && printReferences)
             "<a class=\"token\" href=\"${s.href}\">${t.text}</a> "
         else
-            "${t.text}"
+            t.text
         return printSpan(text, vocabulary.getDisplayName(t.type))
     }
 
@@ -101,29 +101,29 @@ class PrettyPrinterDoc(
     private val parenthesisIds = LinkedList<Int>()
     private var parenthesisCounter = 0
     private fun openParenthesis(token: Token): Document {
-        if (printColor) {
+        return if (printColor) {
             val p = ++parenthesisCounter
             parenthesisIds.push(p)
             val c = rainbowColors[p % rainbowColors.size]
-            return fancystring(
+            fancystring(
                 "<span style=\"color:$c\" class=\"paired-element\" id=\"open-${p}\" mouseover=\"highlight($p)\">${token.text}</span>",
                 token.text.length
             )
         } else {
-            return string(token.text)
+            string(token.text)
         }
     }
 
     private fun closeParenthesis(token: Token): Document {
-        if (printColor) {
+        return if (printColor) {
             val pop = parenthesisIds.pop()
             val c = rainbowColors[pop % rainbowColors.size]
-            return fancystring(
+            fancystring(
                 "<span style=\"color:$c\" class=\"paired-element\" id=\"close-$pop\" mouseover=\"highlight($pop)\">${token.text}</span>",
                 token.text.length
             )
         } else {
-            return string(token.text)
+            string(token.text)
         }
     }
 
@@ -351,8 +351,20 @@ class PrettyPrinterDoc(
         return super.visitArgument_list(ctx)
     }
 
-    override fun visitNumber(ctx: KeYParser.NumberContext?): Document {
-        return super.visitNumber(ctx)
+    override fun visitInteger(ctx: KeYParser.IntegerContext?): Document {
+        return super.visitInteger(ctx)
+    }
+
+    override fun visitFloatLiteral(ctx: KeYParser.FloatLiteralContext?): Document {
+        return super.visitFloatLiteral(ctx)
+    }
+
+    override fun visitDoubleLiteral(ctx: KeYParser.DoubleLiteralContext?): Document {
+        return super.visitDoubleLiteral(ctx)
+    }
+
+    override fun visitRealLiteral(ctx: KeYParser.RealLiteralContext?): Document {
+        return super.visitRealLiteral(ctx)
     }
 
     override fun visitChar_literal(ctx: KeYParser.Char_literalContext?): Document {
@@ -846,10 +858,6 @@ class PrettyPrinterStr(
 
     override fun visitArgument_list(ctx: KeYParser.Argument_listContext?): String {
         return super.visitArgument_list(ctx)
-    }
-
-    override fun visitNumber(ctx: KeYParser.NumberContext?): String {
-        return super.visitNumber(ctx)
     }
 
     override fun visitChar_literal(ctx: KeYParser.Char_literalContext?): String {

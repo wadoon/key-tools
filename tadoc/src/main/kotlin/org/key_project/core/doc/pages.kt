@@ -376,19 +376,49 @@ class FileVisitor(
         tagConsumer.h2 { +"Taclets" }
 
         tagConsumer.div {
-            if (ctx.choices?.option().isNullOrEmpty()) {
+            if (ctx.choices?.option_expr().isNullOrEmpty()) {
                 +"No choice condition specified"
             } else {
                 +"Enabled under choices: "
-                ctx.choices?.option()?.forEach {
-                    val target = index.findChoice(it.cat.text, it.value.text)?.href ?: ""
-                    a(target, classes = "symbol choice") { +it.text }
-                    +" "
+                ctx.choices?.option_expr()?.forEach {
+                    it.accept(object : KeYParserBaseVisitor<Void?>() {
+                        override fun visitOption_expr_or(ctx: KeYParser.Option_expr_orContext): Void? {
+                            ctx.option_expr(0).accept(this)
+                            +" | "
+                            ctx.option_expr(1).accept(this)
+                            return null
+                        }
+
+                        override fun visitOption_expr_paren(ctx: KeYParser.Option_expr_parenContext): Void? {
+                            +"("
+                            ctx.option_expr().accept(this)
+                            +")"
+                            return null
+                        }
+
+                        override fun visitOption_expr_prop(ctx: KeYParser.Option_expr_propContext): Void? {
+                            val target = index.findChoice(ctx.option().cat.text,
+                                ctx.option().value.text)?.href ?: ""
+                            a(target, classes = "symbol choice") { +it.text }
+                            return null
+                        }
+
+                        override fun visitOption_expr_not(ctx: KeYParser.Option_expr_notContext): Void? {
+                            +"!"
+                            ctx.option_expr().accept(this)
+                            return null
+                        }
+
+                        override fun visitOption_expr_and(ctx: KeYParser.Option_expr_andContext): Void? {
+                            ctx.option_expr(0).accept(this)
+                            +" | "
+                            ctx.option_expr(1).accept(this)
+                            return null
+                        }
+                    })
                 }
             }
         }
-
-        super.visitRulesOrAxioms(ctx)
     }
 
     override fun visitTaclet(ctx: KeYParser.TacletContext) {

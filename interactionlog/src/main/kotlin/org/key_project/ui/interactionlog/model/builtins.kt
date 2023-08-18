@@ -6,7 +6,7 @@ import de.uka.ilkd.key.proof.Goal
 import de.uka.ilkd.key.proof.Node
 import de.uka.ilkd.key.rule.*
 import de.uka.ilkd.key.rule.merge.MergeRuleBuiltInRuleApp
-import de.uka.ilkd.key.smt.RuleAppSMT
+import de.uka.ilkd.key.smt.SMTRuleApp
 import de.uka.ilkd.key.ui.AbstractMediatorUserInterfaceControl
 
 object BuiltInRuleInteractionFactory {
@@ -18,7 +18,7 @@ object BuiltInRuleInteractionFactory {
             is LoopContractInternalBuiltInRuleApp -> LoopContractInternalBuiltInRuleInteraction(app, node)
             is LoopInvariantBuiltInRuleApp -> LoopInvariantBuiltInRuleInteraction(app, node)
             is MergeRuleBuiltInRuleApp -> MergeRuleBuiltInRuleInteraction(app, node)
-            is RuleAppSMT -> SMTBuiltInRuleInteraction(app, node)
+            is SMTRuleApp -> SMTBuiltInRuleInteraction(app, node)
             else -> throw IllegalArgumentException()
         }
     }
@@ -159,7 +159,7 @@ class OSSBuiltInRuleInteraction() : BuiltInRuleInteraction() {
  * @version 1 (09.12.18)
  */
 class SMTBuiltInRuleInteraction() : BuiltInRuleInteraction() {
-    constructor(app: RuleAppSMT, node: Node) : this() {
+    constructor(app: SMTRuleApp, node: Node) : this() {
         nodeIdentifier = NodeIdentifier.create(node)
         occurenceIdentifier = OccurenceIdentifier.create(node.sequent(), app.posInOccurrence())
         println(app.ifInsts())

@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.sonarqube.gradle.SonarQubeExtension
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.5.31" apply (false)
+    id("org.jetbrains.kotlin.jvm") version "1.9.0" apply (false)
     id("org.jetbrains.dokka") version "1.6.10" apply (false)
     `maven-publish`
     `java-library`
@@ -41,7 +41,7 @@ subprojects {
     repositories {
         mavenCentral()
         maven { url = uri("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven") }
-        maven("https://git.key-project.org/api/v4/projects/35/packages/maven")
+        maven { url = uri("https://s01.oss.sonatype.org/content/repositories/orgkey-project-1015") }
     }
 
     dependencies {
@@ -54,7 +54,7 @@ subprojects {
         plugin("org.jetbrains:annotations:23.0.0")
         plugin("org.slf4j:slf4j-api:1.7.33")
 
-        //    implementation("org.key_project:key.core")
+        //    implementation("org.key-project:key.core")
 
         val testImplementation by configurations
         testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")

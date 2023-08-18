@@ -538,7 +538,7 @@ tailrec fun pretty(
             /* assert (ok state flatten); */
             proceed(output, state, cont)
         }
-        is Document.HardLine -> {
+        is HardLine -> {
             /* We cannot be in flattening mode, because a hard line has an [infinity]
                Requirement, and we attempt to render a group in flattening mode only
                if this group's Requirement is met. */
@@ -598,6 +598,7 @@ tailrec fun pretty(
         /* __continue. */
         //    __continue(output, state, cont)
         // }
+        is Document.Custom -> TODO()
     }
 }
 
@@ -664,6 +665,7 @@ tailrec fun compact(output: PrintWriter, doc: Document, cont: List<Document>) {
         //    /* Invoke the document's custom rendering function. */
         //    c#compact output;
         // continue output cont
+        is Document.Custom -> TODO()
     }
 }
 

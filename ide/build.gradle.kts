@@ -7,8 +7,8 @@ plugins {
 
 
 dependencies {
-    implementation("org.key_project:key.core:2.10.0")
-    implementation("org.key_project:key.util:2.10.0")
+    implementation("org.key-project:key.core:2.12.0")
+    implementation("org.key-project:key.util:2.12.0")
     implementation("com.miglayout:miglayout-javafx:11.0")
     implementation("org.fxmisc.richtext:richtextfx:0.10.9")
     implementation("org.kordamp.ikonli:ikonli-antdesignicons-pack:12.3.1")
@@ -31,7 +31,7 @@ javafx {
 }
 
 application {
-    mainClass.set("org.key_project.ide.KeyIde")
+    mainClass.set("org.key-project.ide.KeyIde")
 }
 
 repositories {
@@ -44,7 +44,7 @@ repositories {
     outputs.cacheIf { true }
     outputDirectory = file("build/generated-src/antlr/main/")
     sourceSets.main.java.srcDirs += outputDirectory
-    val PARSER_PACKAGE_NAME = "org.key_project.ide.parser"
+    val PARSER_PACKAGE_NAME = "org.key-project.ide.parser"
     arguments += ["-visitor", "-no-listener", "-package", PARSER_PACKAGE_NAME]
 
     doLast {
@@ -63,3 +63,5 @@ repositories {
     }
 }
 */
+
+tasks.getByName("compileKotlin").dependsOn(tasks.getByName("generateGrammarSource"))

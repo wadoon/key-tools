@@ -1,4 +1,4 @@
-package org.key_project.web
+package org.key_project.web.key.miniweb
 
 import io.ktor.application.Application
 import io.ktor.application.call

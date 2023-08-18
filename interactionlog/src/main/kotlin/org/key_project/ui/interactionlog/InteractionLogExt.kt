@@ -99,7 +99,7 @@ class InteractionLogExt : KeYGuiExtension, KeYGuiExtension.MainMenu, KeYGuiExten
             override fun selectedNodeChanged(e: KeYSelectionEvent?) {}
 
             override fun selectedProofChanged(e: KeYSelectionEvent?) {
-                recorder.get(mainWindow.mediator.selectedProof)
+                mainWindow.mediator.selectedProof?.let{ recorder.get(it)}
             }
         })
         toolbar.add(ShowLogAction(mainWindow))

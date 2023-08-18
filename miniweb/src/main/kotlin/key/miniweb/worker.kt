@@ -1,4 +1,4 @@
-package org.key_project.web
+package org.key_project.web.key.miniweb
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.arguments.argument

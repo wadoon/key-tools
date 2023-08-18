@@ -12,8 +12,8 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging:2.1.21")
     implementation("org.slf4j:slf4j-simple:1.7.33")
 
-    implementation("org.key_project:key.core:2.10.0")
-    implementation("org.key_project:key.util:2.10.0")
+    implementation("org.key-project:key.core:2.12.0")
+    implementation("org.key-project:key.util:2.12.0")
 }
 
 repositories {
@@ -21,5 +21,5 @@ repositories {
 }
 
 application {
-    mainClass.set("org.key_project.web.Server")
+    mainClass.set("org.key-project.web.Server")
 }
