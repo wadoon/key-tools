@@ -16,7 +16,7 @@ dependencies {
     implementation("org.key-project:key.core:2.12.0")
     implementation("org.key-project:key.util:2.12.0")
     implementation("org.key-project:key.ui:2.12.0")
-    implementation("org.slf4j:slf4j-api:2.0.7")
+    implementation("org.slf4j:slf4j-api:2.0.9")
 
     testImplementation("org.slf4j:slf4j-simple:2.0.7")
 
