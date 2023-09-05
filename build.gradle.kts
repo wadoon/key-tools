@@ -60,7 +60,7 @@ subprojects {
         testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.0")
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
         testImplementation("com.google.truth:truth:1.1.5")
-        testImplementation("org.slf4j:slf4j-simple:2.0.7")
+        testImplementation("org.slf4j:slf4j-simple:2.0.9")
     }
 
     tasks.withType<KotlinCompile> {
