@@ -14,7 +14,7 @@ dependencies {
     implementation("org.kordamp.ikonli:ikonli-antdesignicons-pack:12.3.1")
     implementation("org.kordamp.ikonli:ikonli-fontawesome5-pack:12.3.1")
     implementation("org.kordamp.ikonli:ikonli-javafx:12.3.1")
-    compileOnly("org.projectlombok:lombok:1.18.28")
+    compileOnly("org.projectlombok:lombok:1.18.30")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.slf4j:slf4j-simple:2.0.9")
     implementation("no.tornado:tornadofx:1.7.20")
