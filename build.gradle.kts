@@ -6,7 +6,7 @@ plugins {
     id("org.jetbrains.dokka") version "1.9.0" apply (false)
     `maven-publish`
     `java-library`
-    id("com.diffplug.spotless") version "6.21.0" apply false
+    id("com.diffplug.spotless") version "6.22.0" apply false
     id("org.sonarqube") version "4.4.1.3373"
 
     id("com.github.ben-manes.versions") version "0.49.0"
