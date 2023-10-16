@@ -8,7 +8,7 @@ application {
 }
 
 dependencies {
-    implementation("org.key-project:key.core:2.12.0")
+    implementation("org.key-project:key.core:2.12.1")
     implementation("org.key-project:key.util:2.12.0")
 
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.10.1")

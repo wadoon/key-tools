@@ -7,7 +7,7 @@ plugins {
 
 
 dependencies {
-    implementation("org.key-project:key.core:2.12.0")
+    implementation("org.key-project:key.core:2.12.1")
     implementation("org.key-project:key.util:2.12.0")
     implementation("com.miglayout:miglayout-javafx:11.1")
     implementation("org.fxmisc.richtext:richtextfx:0.11.1")
