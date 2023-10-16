@@ -13,7 +13,7 @@ dependencies {
     implementation("org.slf4j:slf4j-simple:2.0.9")
 
     implementation("org.key-project:key.core:2.12.0")
-    implementation("org.key-project:key.util:2.12.0")
+    implementation("org.key-project:key.util:2.12.1")
 }
 
 repositories {
