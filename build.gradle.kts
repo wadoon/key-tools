@@ -50,7 +50,7 @@ subprojects {
         plugin(platform("org.jetbrains.kotlin:kotlin-bom"))
         plugin("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         plugin("com.github.ajalt:clikt:2.8.0")
-        plugin("org.jetbrains:annotations:24.0.1")
+        plugin("org.jetbrains:annotations:24.1.0")
         plugin("org.slf4j:slf4j-api:2.0.9")
 
         //    implementation("org.key-project:key.core")
