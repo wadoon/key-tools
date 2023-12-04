@@ -7,7 +7,7 @@ val ktor_version = "1.6.7"
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("io.ktor:ktor-server-netty:2.3.5")
+    implementation("io.ktor:ktor-server-netty:2.3.6")
     implementation("io.ktor:ktor-html-builder:1.6.8")
     implementation("io.github.microutils:kotlin-logging:4.0.0-beta-2")
     implementation("org.slf4j:slf4j-simple:2.0.9")
