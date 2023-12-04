@@ -9,7 +9,7 @@ plugins {
     id("com.diffplug.spotless") version "6.22.0" apply false
     id("org.sonarqube") version "4.4.1.3373"
 
-    id("com.github.ben-manes.versions") version "0.49.0"
+    id("com.github.ben-manes.versions") version "0.50.0"
 }
 
 repositories {
