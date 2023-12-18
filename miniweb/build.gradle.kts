@@ -12,7 +12,7 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging:4.0.0-beta-2")
     implementation("org.slf4j:slf4j-simple:2.0.9")
 
-    implementation("org.key-project:key.core:2.12.0")
+    implementation("org.key-project:key.core:2.12.2")
     implementation("org.key-project:key.util:2.12.1")
 }
 
