@@ -56,7 +56,7 @@ subprojects {
         //    implementation("org.key-project:key.core")
 
         val testImplementation by configurations
-        testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
+        testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.1")
         testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.0")
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
         testImplementation("com.google.truth:truth:1.1.5")
