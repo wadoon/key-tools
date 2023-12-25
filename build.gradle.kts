@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.sonarqube.gradle.SonarQubePlugin
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.9.21" apply (false)
+    id("org.jetbrains.kotlin.jvm") version "1.9.22" apply (false)
     id("org.jetbrains.dokka") version "1.9.10" apply (false)
     `maven-publish`
     `java-library`
