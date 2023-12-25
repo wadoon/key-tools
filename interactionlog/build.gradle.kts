@@ -24,7 +24,7 @@ dependencies {
     plugin("com.atlassian.commonmark:commonmark:0.17.0")
     plugin("com.atlassian.commonmark:commonmark-ext-gfm-tables:0.17.0")
     plugin("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    plugin("com.fasterxml.jackson.core:jackson-databind:2.16.0")
+    plugin("com.fasterxml.jackson.core:jackson-databind:2.16.1")
     plugin("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.16.0")
     plugin("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.16.0")
     plugin("org.ocpsoft.prettytime:prettytime:5.0.7.Final")
