@@ -12,7 +12,7 @@ version = "1.4.0"
 
 dependencies {
     implementation("org.key-project:key.core:2.12.2")
-    implementation("org.key-project:key.util:2.12.1")
+    implementation("org.key-project:key.util:2.12.2")
 
     val plugin by configurations
     plugin("org.slf4j:slf4j-simple:2.0.9")
