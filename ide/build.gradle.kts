@@ -16,7 +16,7 @@ dependencies {
     implementation("org.kordamp.ikonli:ikonli-javafx:12.3.1")
     compileOnly("org.projectlombok:lombok:1.18.30")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.slf4j:slf4j-simple:2.0.10")
+    implementation("org.slf4j:slf4j-simple:2.0.11")
     implementation("no.tornado:tornadofx:1.7.20")
     implementation("org.antlr:antlr4-runtime:4.13.1")
     antlr("org.antlr:antlr4:4.13.1")
