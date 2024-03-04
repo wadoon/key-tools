@@ -21,7 +21,7 @@ dependencies {
     implementation("org.antlr:antlr4-runtime:4.13.1")
     antlr("org.antlr:antlr4:4.13.1")
 
-    testImplementation("com.google.truth:truth:1.4.1")
+    testImplementation("com.google.truth:truth:1.4.2")
 }
 
 
