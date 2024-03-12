@@ -3,7 +3,7 @@ import org.sonarqube.gradle.SonarQubePlugin
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.9.23" apply (false)
-    id("org.jetbrains.dokka") version "1.9.10" apply (false)
+    id("org.jetbrains.dokka") version "1.9.20" apply (false)
     `maven-publish`
     `java-library`
     id("com.diffplug.spotless") version "6.25.0" apply false
