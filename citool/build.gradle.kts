@@ -15,7 +15,7 @@ dependencies {
     implementation("org.key-project:key.util:2.12.2")
 
     val plugin by configurations
-    plugin("org.slf4j:slf4j-simple:2.0.12")
+    plugin("org.slf4j:slf4j-simple:2.0.13")
     plugin("com.google.code.gson:gson:2.10.1")
 }
 
