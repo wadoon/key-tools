@@ -27,5 +27,5 @@ dependencies {
     plugin("com.fasterxml.jackson.core:jackson-databind:2.17.1")
     plugin("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.1")
     plugin("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.17.1")
-    plugin("org.ocpsoft.prettytime:prettytime:5.0.7.Final")
+    plugin("org.ocpsoft.prettytime:prettytime:5.0.8.Final")
 }
