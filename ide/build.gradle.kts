@@ -10,18 +10,18 @@ dependencies {
     implementation("org.key-project:key.core:2.12.2")
     implementation("org.key-project:key.util:2.12.2")
     implementation("com.miglayout:miglayout-javafx:11.3")
-    implementation("org.fxmisc.richtext:richtextfx:0.11.2")
+    implementation("org.fxmisc.richtext:richtextfx:0.11.3")
     implementation("org.kordamp.ikonli:ikonli-antdesignicons-pack:12.3.1")
     implementation("org.kordamp.ikonli:ikonli-fontawesome5-pack:12.3.1")
     implementation("org.kordamp.ikonli:ikonli-javafx:12.3.1")
-    compileOnly("org.projectlombok:lombok:1.18.32")
+    compileOnly("org.projectlombok:lombok:1.18.34")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.slf4j:slf4j-simple:2.0.13")
     implementation("no.tornado:tornadofx:1.7.20")
     implementation("org.antlr:antlr4-runtime:4.13.1")
     antlr("org.antlr:antlr4:4.13.1")
 
-    testImplementation("com.google.truth:truth:1.4.2")
+    testImplementation("com.google.truth:truth:1.4.3")
 }
 
 
