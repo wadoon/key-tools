@@ -59,7 +59,7 @@ subprojects {
         testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.3")
         testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.3")
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.3")
-        testImplementation("com.google.truth:truth:1.4.3")
+        testImplementation("com.google.truth:truth:1.4.4")
         testImplementation("org.slf4j:slf4j-simple:2.0.13")
     }
 
