@@ -18,8 +18,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.slf4j:slf4j-simple:2.0.13")
     implementation("no.tornado:tornadofx:1.7.20")
-    implementation("org.antlr:antlr4-runtime:4.13.1")
-    antlr("org.antlr:antlr4:4.13.1")
+    implementation("org.antlr:antlr4-runtime:4.13.2")
+    antlr("org.antlr:antlr4:4.13.2")
 
     testImplementation("com.google.truth:truth:1.4.4")
 }
