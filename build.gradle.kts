@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.sonarqube.gradle.SonarQubePlugin
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.0.0" apply (false)
+    id("org.jetbrains.kotlin.jvm") version "2.0.10" apply (false)
     id("org.jetbrains.dokka") version "1.9.20" apply (false)
     `maven-publish`
     `java-library`
@@ -51,7 +51,7 @@ subprojects {
         plugin("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         plugin("com.github.ajalt:clikt:2.8.0")
         plugin("org.jetbrains:annotations:24.1.0")
-        plugin("org.slf4j:slf4j-api:2.0.13")
+        plugin("org.slf4j:slf4j-api:2.0.16")
 
         //    implementation("org.key-project:key.core")
 
@@ -60,7 +60,7 @@ subprojects {
         testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.3")
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.3")
         testImplementation("com.google.truth:truth:1.4.4")
-        testImplementation("org.slf4j:slf4j-simple:2.0.13")
+        testImplementation("org.slf4j:slf4j-simple:2.0.16")
     }
 
     tasks.withType<KotlinCompile> {
