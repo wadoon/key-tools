@@ -7,8 +7,8 @@ plugins {
 
 
 dependencies {
-    implementation("org.key-project:key.core:2.12.2")
-    implementation("org.key-project:key.util:2.12.2")
+    implementation("org.key-project:key.core:2.12.3")
+    implementation("org.key-project:key.util:2.12.3")
     implementation("com.miglayout:miglayout-javafx:11.4.2")
     implementation("org.fxmisc.richtext:richtextfx:0.11.3")
     implementation("org.kordamp.ikonli:ikonli-antdesignicons-pack:12.3.1")
