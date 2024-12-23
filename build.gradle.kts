@@ -3,7 +3,7 @@ import org.sonarqube.gradle.SonarQubePlugin
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version "2.1.0" apply (false)
-    id("org.jetbrains.dokka") version "1.9.20" apply (false)
+    id("org.jetbrains.dokka") version "2.0.0" apply (false)
     `maven-publish`
     `java-library`
     id("com.diffplug.spotless") version "6.25.0" apply false
@@ -56,9 +56,9 @@ subprojects {
         //    implementation("org.key-project:key.core")
 
         val testImplementation by configurations
-        testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.3")
-        testImplementation("org.junit.jupiter:junit-jupiter-params:5.11.3")
-        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.11.3")
+        testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+        testImplementation("org.junit.jupiter:junit-jupiter-params:5.11.4")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.11.4")
         testImplementation("com.google.truth:truth:1.4.4")
         testImplementation("org.slf4j:slf4j-simple:2.0.16")
     }
