@@ -11,7 +11,7 @@ dependencies {
     implementation("org.key-project:key.core:2.12.3")
     implementation("org.key-project:key.util:2.12.3")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.11.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.12.0")
     implementation("com.atlassian.commonmark:commonmark:0.17.0")
     implementation("com.atlassian.commonmark:commonmark-ext-gfm-tables:0.17.0")
     implementation("com.atlassian.commonmark:commonmark-ext-autolink:0.17.0")
