@@ -2,14 +2,14 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.sonarqube.gradle.SonarQubePlugin
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.1.0" apply (false)
+    id("org.jetbrains.kotlin.jvm") version "2.1.10" apply (false)
     id("org.jetbrains.dokka") version "2.0.0" apply (false)
     `maven-publish`
     `java-library`
     id("com.diffplug.spotless") version "7.0.2" apply false
     id("org.sonarqube") version "6.0.1.5171"
 
-    id("com.github.ben-manes.versions") version "0.51.0"
+    id("com.github.ben-manes.versions") version "0.52.0"
 }
 
 repositories {
@@ -50,7 +50,7 @@ subprojects {
         plugin(platform("org.jetbrains.kotlin:kotlin-bom"))
         plugin("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         plugin("com.github.ajalt:clikt:2.8.0")
-        plugin("org.jetbrains:annotations:26.0.1")
+        plugin("org.jetbrains:annotations:26.0.2")
         plugin("org.slf4j:slf4j-api:2.0.16")
 
         //    implementation("org.key-project:key.core")
