@@ -16,7 +16,7 @@ dependencies {
 
     val plugin by configurations
     plugin("org.slf4j:slf4j-simple:2.0.16")
-    plugin("com.google.code.gson:gson:2.11.0")
+    plugin("com.google.code.gson:gson:2.12.1")
 }
 
 val plugin by configurations
