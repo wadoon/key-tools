@@ -1,8 +1,5 @@
 rootProject.name = 'key-tools'
-include('citool')
-include('tadoc')
 include('miniweb')
-include('interactionlog')
 include('ide')
-// include('cfgautomacro')
+include('cfgautomacro')
 

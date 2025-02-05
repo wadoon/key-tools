@@ -26,7 +26,7 @@ dependencies {
 
 
 javafx {
-    version = "20"
+    version = "21"
     modules = listOf("javafx.web", "javafx.controls", "javafx.fxml", "javafx.swing")
 }
 
@@ -65,3 +65,4 @@ repositories {
 */
 
 tasks.getByName("compileKotlin").dependsOn(tasks.getByName("generateGrammarSource"))
+tasks.getByName("sourcesJar").dependsOn(tasks.getByName("generateGrammarSource"))

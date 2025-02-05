@@ -63,15 +63,12 @@ subprojects {
         testImplementation("org.slf4j:slf4j-simple:2.0.16")
     }
 
-    tasks.withType<KotlinCompile> {
-        kotlinOptions {
-            freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "11"
-        }
-    }
+    val javaVersion = 21
 
-    tasks.withType<JavaCompile> {
-        options.release.set(11)
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(javaVersion))
+        }
     }
 
     tasks.withType<Test> {
@@ -92,30 +89,6 @@ subprojects {
     tasks.withType<Javadoc>() {
         isFailOnError = false
     }
-
-    /*configure<SpotlessExtension> { // if you are using build.gradle.kts, instead of 'spotless {' use:
-        // configure<com.diffplug.gradle.spotless.SpotlessExtension> {
-        kotlin {
-            // by default the target is every '.kt' and '.kts` file in the java sourcesets
-            //ktfmt()    // has its own section below
-            ktlint().userData(
-                mapOf(
-                    "disabled_rules" to "no-wildcard-imports",
-                    "insert_final_newline" to "true"
-                )
-            )
-            // has its own section below
-            //diktat()   // has its own section below
-            //prettier() // has its own section below
-            licenseHeaderFile("$rootDir/gradle/license_header")  // '/* (C)$YEAR */' // or licenseHeaderFile
-        }
-        kotlinGradle {
-            //target("*.gradle.kts") // default target for kotlinGradle
-            //ktlint() // or ktfmt() or prettier()
-        }
-    }*/
-
-
 
     publishing {
         publications {
@@ -140,16 +113,6 @@ subprojects {
                         connection.set("scm:git:https://github.com/wadoon/key-tools.git")
                         developerConnection.set("scm:git:git@github.com:wadoon/key-tools.git")
                         url.set("http://github.com/wadoon/key-tools")
-                    }
-                }
-            }
-            repositories {
-                maven {
-                    name = "GitHubPackages"
-                    url = uri("https://maven.pkg.github.com/wadoon/key-tools")
-                    credentials {
-                        username = System.getenv("GITHUB_ACTOR")
-                        password = System.getenv("GITHUB_TOKEN")
                     }
                 }
             }
