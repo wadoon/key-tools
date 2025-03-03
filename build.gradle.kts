@@ -51,7 +51,7 @@ subprojects {
         plugin("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         plugin("com.github.ajalt:clikt:2.8.0")
         plugin("org.jetbrains:annotations:26.0.2")
-        plugin("org.slf4j:slf4j-api:2.0.16")
+        plugin("org.slf4j:slf4j-api:2.0.17")
 
         //    implementation("org.key-project:key.core")
 
@@ -60,7 +60,7 @@ subprojects {
         testImplementation("org.junit.jupiter:junit-jupiter-params:5.12.0")
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.12.0")
         testImplementation("com.google.truth:truth:1.4.4")
-        testImplementation("org.slf4j:slf4j-simple:2.0.16")
+        testImplementation("org.slf4j:slf4j-simple:2.0.17")
     }
 
     val javaVersion = 21
