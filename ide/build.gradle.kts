@@ -31,7 +31,7 @@ javafx {
 }
 
 application {
-    mainClass.set("org.key-project.ide.KeyIde")
+    mainClass.set("org.key_project.ide.KeyIde")
 }
 
 repositories {
