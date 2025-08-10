@@ -1,0 +1,6 @@
+rootProject.name = "key-tools"
+include("miniweb")
+include("ide")
+include("cfgautomacro")
+include("abbrevmgr")
+

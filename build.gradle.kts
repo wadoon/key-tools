@@ -3,12 +3,13 @@ import org.sonarqube.gradle.SonarQubePlugin
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version "2.2.0" apply (false)
-    id("org.jetbrains.dokka") version "2.0.0" apply (false)
+    //id("org.jetbrains.dokka") version "2.0.0" apply (false)
     `maven-publish`
     `java-library`
     id("com.diffplug.spotless") version "7.2.1" apply false
     id("org.sonarqube") version "6.2.0.5505"
 
+    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     id("com.github.ben-manes.versions") version "0.52.0"
 }
 
@@ -27,9 +28,10 @@ sonar {
 
 subprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
-    apply(plugin = "org.jetbrains.dokka")
+    //apply(plugin = "org.jetbrains.dokka")
     apply(plugin = "maven-publish")
     apply(plugin = "java-library")
+
     //apply(plugin = "com.diffplug.spotless")
 
     val plugin by configurations.creating
@@ -124,21 +126,22 @@ subprojects {
             }
         }
     }
+}
 
 
-    nexusPublishing {
-        repositories {
-            create("central") {
-                nexusUrl = uri("https://ossrh-staging-api.central.sonatype.com/service/local/")
-                snapshotRepositoryUrl = uri("https://central.sonatype.com/repository/maven-snapshots/")
 
-                stagingProfileId.set("org.key-project")
-                val user: String = project.properties.getOrDefault("ossrhUsername", "").toString()
-                val pwd: String = project.properties.getOrDefault("ossrhPassword", "").toString()
+nexusPublishing {
+    repositories {
+        create("central") {
+            nexusUrl = uri("https://ossrh-staging-api.central.sonatype.com/service/local/")
+            snapshotRepositoryUrl = uri("https://central.sonatype.com/repository/maven-snapshots/")
 
-                username.set(user)
-                password.set(pwd)
-            }
+            stagingProfileId.set("org.key-project")
+            val user: String = project.properties.getOrDefault("ossrhUsername", "").toString()
+            val pwd: String = project.properties.getOrDefault("ossrhPassword", "").toString()
+
+            username.set(user)
+            password.set(pwd)
         }
     }
 }
