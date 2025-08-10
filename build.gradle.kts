@@ -53,8 +53,6 @@ subprojects {
         plugin("org.jetbrains:annotations:26.0.2")
         plugin("org.slf4j:slf4j-api:2.0.17")
 
-        //    implementation("org.key-project:key.core")
-
         val testImplementation by configurations
         testImplementation("org.junit.jupiter:junit-jupiter-api:5.13.4")
         testImplementation("org.junit.jupiter:junit-jupiter-params:5.13.4")
@@ -94,6 +92,14 @@ subprojects {
         publications {
             create<MavenPublication>("mavenJava") {
                 from(components["java"])
+                repositories{
+                    maven {
+                        name = "folder"
+                        url = uri("$rootDir/release")
+                    }
+                }
+
+
                 pom {
                     url.set("http://github.com/wadoon/key-tools")
                     licenses {
@@ -115,6 +121,23 @@ subprojects {
                         url.set("http://github.com/wadoon/key-tools")
                     }
                 }
+            }
+        }
+    }
+
+
+    nexusPublishing {
+        repositories {
+            create("central") {
+                nexusUrl = uri("https://ossrh-staging-api.central.sonatype.com/service/local/")
+                snapshotRepositoryUrl = uri("https://central.sonatype.com/repository/maven-snapshots/")
+
+                stagingProfileId.set("org.key-project")
+                val user: String = project.properties.getOrDefault("ossrhUsername", "").toString()
+                val pwd: String = project.properties.getOrDefault("ossrhPassword", "").toString()
+
+                username.set(user)
+                password.set(pwd)
             }
         }
     }
