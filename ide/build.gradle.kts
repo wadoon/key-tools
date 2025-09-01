@@ -1,7 +1,7 @@
 plugins {
     application
     antlr
-    id("com.gradleup.shadow") version "8.3.8"
+    id("com.gradleup.shadow") version "9.1.0"
     id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
