@@ -2,12 +2,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.sonarqube.gradle.SonarQubePlugin
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.2.0" apply (false)
+    id("org.jetbrains.kotlin.jvm") version "2.2.10" apply (false)
     //id("org.jetbrains.dokka") version "2.0.0" apply (false)
     `maven-publish`
     `java-library`
     id("com.diffplug.spotless") version "7.2.1" apply false
-    id("org.sonarqube") version "6.2.0.5505"
+    id("org.sonarqube") version "6.3.1.5724"
 
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     id("com.github.ben-manes.versions") version "0.52.0"
@@ -52,7 +52,7 @@ subprojects {
         plugin(platform("org.jetbrains.kotlin:kotlin-bom"))
         plugin("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         plugin("com.github.ajalt:clikt:2.8.0")
-        plugin("org.jetbrains:annotations:26.0.2")
+        plugin("org.jetbrains:annotations:26.0.2-1")
         plugin("org.slf4j:slf4j-api:2.0.17")
 
         val testImplementation by configurations
