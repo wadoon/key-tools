@@ -1,13 +1,13 @@
 plugins {
     application
-    id("com.gradleup.shadow") version "9.1.0"
+    id("com.gradleup.shadow") version "9.2.2"
 }
 
 val ktor_version = "1.6.7"
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("io.ktor:ktor-server-netty:3.2.3")
+    implementation("io.ktor:ktor-server-netty:3.3.0")
     implementation("io.ktor:ktor-html-builder:1.6.8")
     implementation("io.github.microutils:kotlin-logging:4.0.0-beta-2")
     implementation("org.slf4j:slf4j-simple:2.0.17")
