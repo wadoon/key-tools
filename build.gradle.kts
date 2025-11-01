@@ -2,12 +2,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.sonarqube.gradle.SonarQubePlugin
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.2.20" apply (false)
+    id("org.jetbrains.kotlin.jvm") version "2.2.21" apply (false)
     //id("org.jetbrains.dokka") version "2.0.0" apply (false)
     `maven-publish`
     `java-library`
     id("com.diffplug.spotless") version "8.0.0" apply false
-    id("org.sonarqube") version "6.3.1.5724"
+    id("org.sonarqube") version "7.0.1.6134"
 
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     id("com.github.ben-manes.versions") version "0.53.0"
@@ -56,9 +56,9 @@ subprojects {
         plugin("org.slf4j:slf4j-api:2.0.17")
 
         val testImplementation by configurations
-        testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.0")
-        testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.0")
-        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.0")
+        testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.1")
+        testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.1")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.1")
         testImplementation("com.google.truth:truth:1.4.5")
         testImplementation("org.slf4j:slf4j-simple:2.0.17")
     }
