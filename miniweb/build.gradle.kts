@@ -1,6 +1,6 @@
 plugins {
     application
-    id("com.gradleup.shadow") version "9.2.2"
+    id("com.gradleup.shadow") version "9.3.0"
 }
 
 val ktor_version = "1.6.7"

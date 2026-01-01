@@ -2,12 +2,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.sonarqube.gradle.SonarQubePlugin
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.2.21" apply (false)
+    id("org.jetbrains.kotlin.jvm") version "2.3.0" apply (false)
     //id("org.jetbrains.dokka") version "2.0.0" apply (false)
     `maven-publish`
     `java-library`
     id("com.diffplug.spotless") version "8.1.0" apply false
-    id("org.sonarqube") version "7.1.0.6387"
+    id("org.sonarqube") version "7.2.2.6593"
 
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     id("com.github.ben-manes.versions") version "0.53.0"
