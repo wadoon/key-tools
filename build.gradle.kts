@@ -6,7 +6,7 @@ plugins {
     //id("org.jetbrains.dokka") version "2.0.0" apply (false)
     `maven-publish`
     `java-library`
-    id("com.diffplug.spotless") version "8.1.0" apply false
+    id("com.diffplug.spotless") version "8.2.1" apply false
     id("org.sonarqube") version "7.2.2.6593"
 
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
@@ -56,9 +56,9 @@ subprojects {
         plugin("org.slf4j:slf4j-api:2.0.17")
 
         val testImplementation by configurations
-        testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.1")
-        testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.1")
-        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.1")
+        testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.2")
+        testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.2")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.2")
         testImplementation("com.google.truth:truth:1.4.5")
         testImplementation("org.slf4j:slf4j-simple:2.0.17")
     }
