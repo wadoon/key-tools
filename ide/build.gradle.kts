@@ -1,7 +1,7 @@
 plugins {
     application
     antlr
-    id("com.gradleup.shadow") version "9.3.1"
+    id("com.gradleup.shadow") version "9.3.2"
     id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
@@ -9,7 +9,7 @@ plugins {
 dependencies {
     implementation("org.key-project:key.core:2.12.3")
     implementation("org.key-project:key.util:2.12.3")
-    implementation("com.miglayout:miglayout-javafx:11.4.2")
+    implementation("com.miglayout:miglayout-javafx:11.4.3")
     implementation("org.fxmisc.richtext:richtextfx:0.11.7")
     implementation("org.kordamp.ikonli:ikonli-antdesignicons-pack:12.4.0")
     implementation("org.kordamp.ikonli:ikonli-fontawesome5-pack:12.4.0")
