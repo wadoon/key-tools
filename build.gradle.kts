@@ -2,15 +2,15 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.sonarqube.gradle.SonarQubePlugin
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.3.20" apply (false)
+    id("org.jetbrains.kotlin.jvm") version "2.3.21" apply (false)
     //id("org.jetbrains.dokka") version "2.0.0" apply (false)
     `maven-publish`
     `java-library`
-    id("com.diffplug.spotless") version "8.4.0" apply false
-    id("org.sonarqube") version "7.2.3.7755"
+    id("com.diffplug.spotless") version "8.6.0" apply false
+    id("org.sonarqube") version "7.3.0.8198"
 
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
-    id("com.github.ben-manes.versions") version "0.53.0"
+    id("com.github.ben-manes.versions") version "0.54.0"
 }
 
 repositories {
@@ -53,14 +53,14 @@ subprojects {
         plugin("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         plugin("com.github.ajalt:clikt:2.8.0")
         plugin("org.jetbrains:annotations:26.1.0")
-        plugin("org.slf4j:slf4j-api:2.0.17")
+        plugin("org.slf4j:slf4j-api:2.0.18")
 
         val testImplementation by configurations
-        testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.3")
-        testImplementation("org.junit.jupiter:junit-jupiter-params:6.0.3")
-        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.3")
+        testImplementation("org.junit.jupiter:junit-jupiter-api:6.1.0")
+        testImplementation("org.junit.jupiter:junit-jupiter-params:6.1.0")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.1.0")
         testImplementation("com.google.truth:truth:1.4.5")
-        testImplementation("org.slf4j:slf4j-simple:2.0.17")
+        testImplementation("org.slf4j:slf4j-simple:2.0.18")
     }
 
     val javaVersion = 21
