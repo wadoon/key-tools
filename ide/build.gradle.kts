@@ -1,22 +1,22 @@
 plugins {
     application
     antlr
-    id("com.gradleup.shadow") version "9.4.1"
+    id("com.gradleup.shadow") version "9.6.1"
     id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
 
 dependencies {
-    implementation("org.key-project:key.core:2.12.3")
-    implementation("org.key-project:key.util:2.12.3")
+    implementation("org.key-project:key.core:3.0.0")
+    implementation("org.key-project:key.util:3.0.0")
     implementation("com.miglayout:miglayout-javafx:11.4.3")
     implementation("org.fxmisc.richtext:richtextfx:0.11.7")
     implementation("org.kordamp.ikonli:ikonli-antdesignicons-pack:12.4.0")
     implementation("org.kordamp.ikonli:ikonli-fontawesome5-pack:12.4.0")
     implementation("org.kordamp.ikonli:ikonli-javafx:12.4.0")
-    compileOnly("org.projectlombok:lombok:1.18.44")
+    compileOnly("org.projectlombok:lombok:1.18.46")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.slf4j:slf4j-simple:2.0.17")
+    implementation("org.slf4j:slf4j-simple:2.0.18")
     implementation("no.tornado:tornadofx:1.7.20")
     implementation("org.antlr:antlr4-runtime:4.13.2")
     antlr("org.antlr:antlr4:4.13.2")
